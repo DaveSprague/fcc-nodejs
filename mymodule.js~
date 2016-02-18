@@ -1,0 +1,18 @@
+module.exports = function (dirname, ext, callback) {
+
+
+ext = '.' + ext;
+//var filteredFiles;
+fs.readdir(dirname, function(err,flist) {
+    if (err) throw err;  // fix this!!!!!
+    filteredFiles = flist.filter(function(value){
+	return path.extname(value) === ext;
+    });
+filteredFiles.forEach(function(val){
+    console.log(val);
+});
+});
+
+}
+;
+
